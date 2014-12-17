@@ -26,12 +26,14 @@ function buscarlibros ()
   
 function buscargenero (Q)
 {
+	alert ("Q" + Q);
 	dato ="Genero="+Q;
 	$.ajax({
-		type:"POST",
+		type: "POST",
 		url: "http://192.168.1.188/practica12/ConsultaGenero.php",
 		data: dato
 	}).done(function(msg) {
+		alert (msg);
 		var DatosJSON=JSON.parse(msg);
 		if (DatosJSON.datos==1)
 		{
@@ -60,6 +62,7 @@ $(document).ready(function(e) {
   });
   
  $('#bgenero').tap(function(){
+	 alert ("dentro bgenero");
 	 var selected = $('#selectgen').find('option:selected');
     
     buscargenero (selected.text());
