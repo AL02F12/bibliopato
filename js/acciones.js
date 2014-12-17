@@ -60,10 +60,24 @@ $(document).ready(function(e) {
   });
   
  $('#bgenero').tap(function(){
-    buscargenero ($('#selectgen').val());
+	 var selected = $('#selectgen').find('option:selected');
+    
+    buscargenero (selected.text());
 
 	$.mobile.changePage('#page4');
   }); 
  });  
  }); 
  
+
+
+
+/*
+
+$(document).ready(function(e) {
+	$('#bgenero').click(function(){
+		var selected = $('#selectgen').find('option:selected');
+    alert(selected.val() + ' ' + selected.text());
+	
+	});
+});*/
