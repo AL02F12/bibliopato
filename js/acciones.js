@@ -37,10 +37,10 @@ function buscargenero (Q)
 		var DatosJSON=JSON.parse(msg);
 		if (DatosJSON.datos==1)
 		{
-			$('#libros').empty();
+			$('#listag').empty();
 			for (var i=0; i <DatosJSON.libros.length; i++){
 					
-			$('#libros').append('<div style="float:left;width:45%"> <p> Género:: '+DatosJSON.libros[i].Genero+' <br> Libro: '+DatosJSON.libros[i].Nombre_libro+' <br> Autor :'+DatosJSON.libros[i].Autor+' </p> </div> <div style="float:left;width:55%"> <img class="portada" src="http://192.168.1.188/practica12/recursos/fotos/'+DatosJSON.libros[i].Id+'.jpg"  width:30%; height:30%;>  </div> <div style="clear:both">  <hr> <hr> </div>');
+			$('#listag').append('<div style="float:left;width:45%"> <p> Género:: '+DatosJSON.libros[i].Genero+' <br> Libro: '+DatosJSON.libros[i].Nombre_libro+' <br> Autor :'+DatosJSON.libros[i].Autor+' </p> </div> <div style="float:left;width:55%"> <img class="portada" src="http://192.168.1.188/practica12/recursos/fotos/'+DatosJSON.libros[i].Id+'.jpg"  width:30%; height:30%;>  </div> <div style="clear:both">  <hr> <hr> </div> ' +DatosJSON.libros[i].Id);
 			}
 			$("#page4").trigger('pagecreate');
 			}
