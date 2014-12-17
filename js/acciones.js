@@ -51,12 +51,12 @@ function buscargenero ()
 $(document).ready(function(e) {
  document.addEventListener("deviceready",function(){
   $('#todos').tap(function(){
-    buscargenero ();
+    buscarlibros ();
 
-	$.mobile.changePage('#page4');
+	$.mobile.changePage('#page2');
   });
   
- $('#todos').tap(function(){
+ $('#genero').tap(function(){
     buscargenero ();
 
 	$.mobile.changePage('#page4');
