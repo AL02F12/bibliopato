@@ -24,11 +24,13 @@ function buscarlibros ()
 }
 
   
-function buscargenero ()
+function buscargenero (Q)
 {
+	dato ="Genero="+Q;
 	$.ajax({
 		type:"POST",
-		url: "http://192.168.1.188/practica12/ConsultaGenero.php"
+		url: "http://192.168.1.188/practica12/ConsultaGenero.php",
+		data: dato
 	}).done(function(msg) {
 		var DatosJSON=JSON.parse(msg);
 		if (DatosJSON.datos==1)
@@ -57,8 +59,8 @@ $(document).ready(function(e) {
 	$.mobile.changePage('#page2');
   });
   
- $('#genero').tap(function(){
-    buscargenero ();
+ $('#bgenero').tap(function(){
+    buscargenero ($('#selectgen').val());
 
 	$.mobile.changePage('#page4');
   }); 
