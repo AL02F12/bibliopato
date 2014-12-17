@@ -51,9 +51,9 @@ function buscargenero ()
 $(document).ready(function(e) {
  document.addEventListener("deviceready",function(){
   $('#todos').tap(function(){
-    buscarlibros ();
+    buscargenero ();
 
-	$.mobile.changePage('#page2');
+	$.mobile.changePage('#page4');
   });
   
  $('#todos').tap(function(){
